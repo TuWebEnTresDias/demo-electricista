@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Antes: cableado expuesto y deteriorado">
+  <rect width="800" height="500" fill="#f1f5f9"/>
+  <!-- Wall -->
+  <rect x="120" y="60" width="560" height="380" rx="8" fill="#e2e8f0" stroke="#94a3b8" stroke-width="3"/>
+  <!-- Exposed frayed wires -->
+  <g stroke="#b45309" stroke-width="6" fill="none" opacity="0.9">
+    <path d="M170 110 q60 30 20 80 q-40 50 30 90 q60 30 10 90"/>
+    <path d="M230 100 q80 -10 30 60 q-40 70 40 110"/>
+    <path d="M300 120 q40 50 -10 90 q-40 50 30 100"/>
+  </g>
+  <!-- Bare connection spark -->
+  <g transform="translate(330 360)" fill="#fbbf24">
+    <path d="M14 0 L3 26 L14 26 L9 52 L31 20 L18 20 Z"/>
+  </g>
+  <text x="400" y="470" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#b45309" text-anchor="middle">SIN PROTECCIÓN</text>
+</svg>

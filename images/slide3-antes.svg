@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Antes: habitación con luz tenue y bombillo quemado">
+  <rect width="800" height="500" fill="#d8dee9"/>
+  <!-- Dim room -->
+  <rect x="120" y="80" width="560" height="340" rx="8" fill="#9aa5b5"/>
+  <!-- Faint bare bulb -->
+  <line x1="400" y1="80" x2="400" y2="200" stroke="#475569" stroke-width="4"/>
+  <circle cx="400" cy="210" r="26" fill="#cbd5e1" stroke="#64748b" stroke-width="3"/>
+  <text x="400" y="450" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#334155" text-anchor="middle">LUZ TENUE</text>
+</svg>

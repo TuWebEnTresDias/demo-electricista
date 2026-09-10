@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Después: tablero eléctrico nuevo y ordenado">
+  <rect width="800" height="500" fill="#eef6ff"/>
+  <!-- Clean modern panel -->
+  <rect x="250" y="80" width="300" height="340" rx="10" fill="#1e3a8a" stroke="#1e40af" stroke-width="4"/>
+  <rect x="270" y="100" width="260" height="300" rx="6" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
+  <!-- Neat breakers in a row -->
+  <g>
+    <rect x="290" y="120" width="100" height="34" rx="5" fill="#2563eb"/>
+    <rect x="410" y="120" width="100" height="34" rx="5" fill="#2563eb"/>
+    <rect x="290" y="170" width="100" height="34" rx="5" fill="#22c55e"/>
+    <rect x="410" y="170" width="100" height="34" rx="5" fill="#2563eb"/>
+    <rect x="290" y="220" width="100" height="34" rx="5" fill="#2563eb"/>
+    <rect x="410" y="220" width="100" height="34" rx="5" fill="#22c55e"/>
+    <rect x="290" y="270" width="100" height="34" rx="5" fill="#2563eb"/>
+    <rect x="410" y="270" width="100" height="34" rx="5" fill="#2563eb"/>
+  </g>
+  <!-- Tidy labeled wires -->
+  <g stroke="#0ea5e9" stroke-width="4" fill="none" stroke-linecap="round">
+    <path d="M300 340 H500"/>
+    <path d="M340 360 H460"/>
+  </g>
+  <text x="400" y="400" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">A PROTECCIÓN</text>
+</svg>

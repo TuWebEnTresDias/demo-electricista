@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Después: habitación con iluminación LED brillante">
+  <rect width="800" height="500" fill="#eef6ff"/>
+  <!-- Bright room -->
+  <rect x="120" y="80" width="560" height="340" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="3"/>
+  <!-- LED downlights -->
+  <g>
+    <circle cx="280" cy="160" r="22" fill="#fde68a"/>
+    <circle cx="400" cy="160" r="22" fill="#fde68a"/>
+    <circle cx="520" cy="160" r="22" fill="#fde68a"/>
+  </g>
+  <!-- Glow -->
+  <g fill="#fef9c3" opacity="0.7">
+    <circle cx="280" cy="160" r="46"/>
+    <circle cx="400" cy="160" r="46"/>
+    <circle cx="520" cy="160" r="46"/>
+  </g>
+  <!-- Light beams -->
+  <g stroke="#fde68a" stroke-width="6" opacity="0.5">
+    <path d="M280 182 L240 300"/>
+    <path d="M400 182 L400 300"/>
+    <path d="M520 182 L560 300"/>
+  </g>
+  <text x="400" y="450" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">ILUMINACIÓN LED</text>
+</svg>

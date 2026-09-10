@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Fondo decorativo de instalación eléctrica">
+  <defs>
+    <pattern id="grid" width="48" height="48" patternUnits="userSpaceOnUse">
+      <path d="M48 0H0V48" fill="none" stroke="#d7e1ef" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="bolt" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#f59e0b"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#eaf1fa"/>
+  <rect width="1600" height="900" fill="url(#grid)"/>
+
+  <!-- Circuit lines -->
+  <g stroke="#bcd0ec" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M120 720 H520 V420 H900 V640 H1180"/>
+    <path d="M120 760 H420 V480 H760 V700 H1100 V460 H1320"/>
+    <path d="M1400 200 V520 H1080 V300 H820"/>
+  </g>
+  <!-- Nodes -->
+  <g fill="#2563eb">
+    <circle cx="520" cy="420" r="9"/>
+    <circle cx="900" cy="640" r="9"/>
+    <circle cx="420" cy="480" r="9"/>
+    <circle cx="760" cy="700" r="9"/>
+    <circle cx="1100" cy="460" r="9"/>
+    <circle cx="1080" cy="300" r="9"/>
+    <circle cx="120" cy="720" r="9"/>
+  </g>
+
+  <!-- Big lightning bolt motif -->
+  <g transform="translate(980 220) scale(2.1)">
+    <path d="M30 0 L6 56 L26 56 L18 110 L62 40 L40 40 Z" fill="url(#bolt)" opacity="0.92"/>
+  </g>
+  <!-- Secondary small bolt -->
+  <g transform="translate(360 180) scale(1.1)" opacity="0.8">
+    <path d="M30 0 L6 56 L26 56 L18 110 L62 40 L40 40 Z" fill="#93c5fd"/>
+  </g>
+
+  <!-- Stylized house outline with wiring -->
+  <g transform="translate(1180 520)" stroke="#2563eb" stroke-width="4" fill="none">
+    <path d="M0 40 L90 -30 L180 40"/>
+    <rect x="20" y="40" width="140" height="120"/>
+    <path d="M55 160 V110 H95 V160" />
+    <path d="M120 60 h40 v40 h-40 z" fill="#fde68a" stroke="#f59e0b"/>
+  </g>
+</svg>

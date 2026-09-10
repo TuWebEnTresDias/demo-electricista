@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Antes: tablero eléctrico viejo y desordenado">
+  <rect width="800" height="500" fill="#f1f5f9"/>
+  <!-- Crooked old panel -->
+  <rect x="250" y="80" width="300" height="340" rx="10" fill="#cbd5e1" stroke="#64748b" stroke-width="4"/>
+  <rect x="270" y="100" width="260" height="300" rx="6" fill="#e2e8f0" stroke="#94a3b8" stroke-width="2"/>
+  <!-- Tangled messy wires -->
+  <g stroke="#ef4444" stroke-width="5" fill="none" opacity="0.85">
+    <path d="M300 130 q40 60 -10 120 q-40 50 30 90 q60 40 -10 100"/>
+    <path d="M360 130 q60 -30 10 40 q-50 70 40 100 q70 30 -10 90"/>
+  </g>
+  <g stroke="#f59e0b" stroke-width="5" fill="none" opacity="0.85">
+    <path d="M430 130 q-30 70 30 110 q50 30 -20 90 q-40 60 30 80"/>
+  </g>
+  <!-- Spark -->
+  <g transform="translate(470 200)" fill="#fbbf24">
+    <path d="M14 0 L3 26 L14 26 L9 52 L31 20 L18 20 Z"/>
+  </g>
+  <!-- Warning label -->
+  <rect x="300" y="360" width="200" height="40" rx="6" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+  <text x="400" y="386" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#dc2626" text-anchor="middle">SOBRECARGADO</text>
+</svg>

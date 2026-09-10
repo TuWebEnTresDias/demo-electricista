@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" role="img" aria-label="Después: cableado embutido en cañería prolija">
+  <rect width="800" height="500" fill="#eef6ff"/>
+  <!-- Wall -->
+  <rect x="120" y="60" width="560" height="380" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="3"/>
+  <!-- Conduit channels -->
+  <g stroke="#2563eb" stroke-width="10" fill="none" stroke-linecap="round">
+    <path d="M180 130 H620"/>
+    <path d="M180 230 H620"/>
+    <path d="M180 330 H620"/>
+  </g>
+  <g stroke="#bfdbfe" stroke-width="3" fill="none" stroke-linecap="round">
+    <path d="M180 130 H620"/>
+    <path d="M180 230 H620"/>
+    <path d="M180 330 H620"/>
+  </g>
+  <!-- Outlet boxes -->
+  <g fill="#1e40af">
+    <rect x="300" y="112" width="40" height="36" rx="4"/>
+    <rect x="470" y="212" width="40" height="36" rx="4"/>
+    <rect x="360" y="312" width="40" height="36" rx="4"/>
+  </g>
+  <text x="400" y="470" font-family="Inter, sans-serif" font-size="20" font-weight="700" fill="#1d4ed8" text-anchor="middle">CABLEADO EMBUTIDO</text>
+</svg>
