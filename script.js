@@ -1,7 +1,7 @@
 (() => {
   'use strict';
 
-  const localParams = new URLSearchParams(window.location.search);
+  const localParams = new URLSearchParams(window.__DEMO_PARAMS__ ?? window.location.search);
   let params = localParams;
   if (!localParams.toString()) {
     try {
@@ -9,7 +9,7 @@
     } catch (error) { /* Cross-origin parent: keep local defaults. */ }
   }
 
-  const rawName = params.get('e') || params.get('n') || '';
+  const rawName = params.get('e')?.trim().slice(0, 80) || params.get('n')?.trim().slice(0, 80) || '';
   const identity = rawName.trim().slice(0, 80) || 'Electricista';
   document.querySelectorAll('[data-dynamic="logo"], [data-dynamic="footer-name"]').forEach((el) => {
     el.textContent = identity;
@@ -20,16 +20,7 @@
       if (description) description.content = `${identity}: servicio eléctrico con rutas de falla, instalación e inspección.`;
   }
 
-  const normalizeArgentinaPhone = (value) => {
-    if (!value || !/^[+\d\s().-]+$/.test(value)) return null;
-    let digits = value.replace(/\D/g, '');
-    if (digits.startsWith('549')) digits = digits.slice(3);
-    else if (digits.startsWith('54')) digits = digits.slice(2);
-    if (digits.startsWith('0')) digits = digits.slice(1);
-    if (digits.startsWith('15')) return null;
-    return /^\d{10}$/.test(digits) ? digits : null;
-  };
-  const phone = normalizeArgentinaPhone(params.get('t') || '');
+  const phone = window.SiteSecurity.normalizePhone(params.get('t') || '')?.national || null;
   const setText = (selector, text) => document.querySelectorAll(selector).forEach((el) => { el.textContent = text; });
   const intentMessages = {
     falla: `Hola, soy ____. Me comunico por el servicio eléctrico de ${identity}. Tengo una falla eléctrica: ocurre desde hace ____ y afecta ____. ¿Te parece conversar sobre el próximo paso?`,
