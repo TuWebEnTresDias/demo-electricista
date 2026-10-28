@@ -20,7 +20,7 @@
       if (description) description.content = `${identity}: servicio eléctrico con rutas de falla, instalación e inspección.`;
   }
 
-  const phone = window.SiteSecurity.normalizePhone(params.get('t') || '')?.national || null;
+  const phone = window.SiteSecurity.normalizePhone(params.get('t') ?? document.documentElement.dataset.defaultPhone)?.national || null;
   const setText = (selector, text) => document.querySelectorAll(selector).forEach((el) => { el.textContent = text; });
   const intentMessages = {
     falla: `Hola, soy ____. Me comunico por el servicio eléctrico de ${identity}. Tengo una falla eléctrica: ocurre desde hace ____ y afecta ____. ¿Te parece conversar sobre el próximo paso?`,
