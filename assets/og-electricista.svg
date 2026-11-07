@@ -1,13 +1,13 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
-  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1014"/><stop offset="1" stop-color="#18252b"/></linearGradient><radialGradient id="glow"><stop stop-color="#d88051" stop-opacity=".42"/><stop offset="1" stop-color="#d88051" stop-opacity="0"/></radialGradient></defs>
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#102b25"/><stop offset="1" stop-color="#17483b"/></linearGradient><radialGradient id="glow"><stop stop-color="#dcf46b" stop-opacity=".3"/><stop offset="1" stop-color="#dcf46b" stop-opacity="0"/></radialGradient></defs>
   <rect width="1200" height="630" fill="url(#bg)"/>
   <circle cx="1020" cy="175" r="360" fill="url(#glow)"/>
-  <path d="M0 520h550" stroke="#62c8e9" stroke-opacity=".55"/>
-  <path d="M0 539h300" stroke="#d88051" stroke-width="4"/>
-  <text x="76" y="146" fill="#f2ad7c" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">SERVICIO ELÉCTRICO · DEMO</text>
-  <text x="76" y="283" fill="#f7f6f2" font-family="Arial,sans-serif" font-size="76" font-weight="600" letter-spacing="-4">Cuando todo</text>
-  <text x="76" y="376" fill="#f2ad7c" font-family="Georgia,serif" font-size="84" font-style="italic" letter-spacing="-4">conecta, se nota.</text>
-  <text x="78" y="454" fill="#a6b2b6" font-family="Arial,sans-serif" font-size="24">Instalaciones · diagnóstico · mejoras</text>
-  <rect x="948" y="405" width="168" height="94" rx="3" fill="#10171c" stroke="#f2ad7c" stroke-opacity=".5"/>
-  <path d="m1033 420-29 40h20l-4 26 31-41h-20z" fill="#62c8e9"/>
+  <path d="M0 520h550" stroke="#dcf46b" stroke-opacity=".58"/>
+  <path d="M0 539h300" stroke="#dcf46b" stroke-width="4"/>
+  <text x="76" y="146" fill="#dcf46b" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">SERVICIO ELÉCTRICO · DEMO</text>
+  <text x="76" y="283" fill="#fffef9" font-family="Arial,sans-serif" font-size="76" font-weight="600" letter-spacing="-4">Cuando todo</text>
+  <text x="76" y="376" fill="#dcf46b" font-family="Georgia,serif" font-size="84" font-style="italic" letter-spacing="-4">conecta, se nota.</text>
+  <text x="78" y="454" fill="#d8e4da" font-family="Arial,sans-serif" font-size="24">Instalaciones · diagnóstico · mejoras</text>
+  <rect x="948" y="405" width="168" height="94" rx="3" fill="#102b25" stroke="#dcf46b" stroke-opacity=".5"/>
+  <path d="m1033 420-29 40h20l-4 26 31-41h-20z" fill="#dcf46b"/>
 </svg>
