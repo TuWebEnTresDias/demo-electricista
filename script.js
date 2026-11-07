@@ -1,54 +1,138 @@
 (() => {
   'use strict';
 
-  const localParams = new URLSearchParams(window.__DEMO_PARAMS__ ?? window.location.search);
-  let params = localParams;
-  if (!localParams.toString()) {
-    try {
-      if (window.parent && window.parent !== window) params = new URLSearchParams(window.parent.location.search);
-    } catch (error) { /* Cross-origin parent: keep local defaults. */ }
-  }
+  const params = new URLSearchParams(window.__DEMO_PARAMS__ ?? window.location.search);
+  const rawCompany = (params.get('e') || params.get('n') || '').trim().slice(0, 80);
+  const identity = rawCompany || 'Electricista';
+  const safePhone = window.SiteSecurity && window.SiteSecurity.normalizePhone(
+    params.has('t') ? params.get('t') : document.documentElement.dataset.defaultPhone
+  );
 
-  const rawCompany = params.get('e')?.trim().slice(0, 80);
-  const rawName = params.get('n')?.trim().slice(0, 80);
-  const safeName = (rawCompany || rawName || '').trim().slice(0, 80);
-  const identity = safeName || 'Electricista';
-  const rawPhone = params.get('t');
-  const contactPhone = window.SiteSecurity.normalizePhone(rawPhone ?? '1158055802');
-  const cleanPhone = contactPhone?.national || '';
-  const whatsappPhone = contactPhone?.whatsapp || '';
-  const displayPhone = cleanPhone.replace(/(\d{2})(\d{4})(\d{4})/, '$1 $2-$3');
+  document.documentElement.classList.add('js');
+  document.querySelectorAll('[data-dynamic="logo"],[data-dynamic="footer-name"],[data-dynamic="footer-small"]').forEach((node) => {
+    node.textContent = identity;
+  });
+  document.title = identity + ' | Electricidad con criterio';
+  const description = document.querySelector('meta[name="description"]');
+  if (description) description.content = identity + ': instalaciones, mejoras y diagnóstico eléctrico con una mirada clara y cuidada.';
 
-  const messages = {
-    diagnostico: `Hola, soy ____. Me comunico desde la página de ${identity}. Quiero contar un problema eléctrico para orientar el diagnóstico.`,
-    falla: `Hola, soy ____. Me comunico desde la página de ${identity}. Tengo una falla eléctrica: ocurre desde hace ____ y afecta ____. ¿Podemos orientar el próximo paso?`,
-    instalacion: `Hola, soy ____. Me comunico desde la página de ${identity}. Quiero consultar una instalación o mejora eléctrica. El espacio es ____ y necesito ____ .`,
-    inspeccion: `Hola, soy ____. Me comunico desde la página de ${identity}. Quiero consultar una inspección eléctrica. Es una ____ y me preocupa ____ .`
+  const year = document.getElementById('currentYear');
+  if (year) year.textContent = String(new Date().getFullYear());
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mainNav = document.getElementById('mainNav');
+  const closeMenu = () => {
+    if (!menuToggle || !mainNav) return;
+    menuToggle.setAttribute('aria-expanded', 'false');
+    menuToggle.setAttribute('aria-label', 'Abrir navegación');
+    mainNav.classList.remove('is-open');
   };
-
-  document.querySelectorAll('[data-dynamic="logo"],[data-dynamic="footer-name"]').forEach((el) => {
-    el.textContent = `${identity} / premium`;
-  });
-  if (safeName) {
-    document.title = `${identity} | Diagnóstico eléctrico claro`;
-    const description = document.querySelector('meta[name="description"]');
-    if (description) description.content = `${identity}: demo comercial de diagnóstico por WhatsApp y trabajos eléctricos con alcance transparente.`;
+  if (menuToggle && mainNav) {
+    menuToggle.addEventListener('click', () => {
+      const open = menuToggle.getAttribute('aria-expanded') !== 'true';
+      menuToggle.setAttribute('aria-expanded', String(open));
+      menuToggle.setAttribute('aria-label', open ? 'Cerrar navegación' : 'Abrir navegación');
+      mainNav.classList.toggle('is-open', open);
+    });
+    mainNav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') closeMenu();
+    });
   }
 
-  document.querySelectorAll('[data-whatsapp]').forEach((link) => {
-    const intent = link.dataset.intent || 'diagnostico';
-    link.href = `https://wa.me/${whatsappPhone}?text=${encodeURIComponent(messages[intent] || messages.diagnostico)}`;
-  });
-  document.querySelectorAll('a[href^="tel:"]').forEach((link) => { link.href = `tel:${cleanPhone}`; });
-  document.querySelectorAll('[data-phone-display]').forEach((el) => { el.textContent = displayPhone; });
+  const form = document.getElementById('whatsappForm');
+  const feedback = document.getElementById('formFeedback');
+  const preparedMessageLink = document.getElementById('preparedMessageLink');
+  const type = document.getElementById('serviceType');
+  const message = document.getElementById('contactNeed');
+  const name = document.getElementById('contactName');
+  const zone = document.getElementById('contactZone');
 
-  const toggle = document.getElementById('menuToggle');
-  const nav = document.getElementById('mainNav');
-  const closeMenu = () => { nav.classList.remove('is-open'); toggle.setAttribute('aria-expanded', 'false'); };
-  toggle.addEventListener('click', () => {
-    const open = nav.classList.toggle('is-open');
-    toggle.setAttribute('aria-expanded', String(open));
+  document.querySelectorAll('[data-service-select]').forEach((link) => {
+    link.addEventListener('click', () => {
+      if (type) type.value = link.dataset.serviceSelect;
+    });
   });
-  nav.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMenu));
-  document.getElementById('currentYear').textContent = new Date().getFullYear();
+
+  if (form) {
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      if (!window.SiteSecurity || !window.SiteSecurity.contactAllowed() || !safePhone) {
+        if (feedback) feedback.textContent = 'El contacto de esta demo no está disponible. Revisá el teléfono configurado antes de publicar.';
+        return;
+      }
+
+      const parts = [
+        'Hola, soy ' + ((name && name.value.trim()) || '____') + '.',
+        'Me comunico desde la página de ' + identity + '.',
+        'Quiero consultar por: ' + type.value + '.',
+        'Zona: ' + ((zone && zone.value.trim()) || '____') + '.',
+        'Situación: ' + message.value.trim()
+      ];
+      const url = new URL('https://wa.me/' + safePhone.whatsapp);
+      url.searchParams.set('text', parts.join('\n'));
+      if (preparedMessageLink) {
+        preparedMessageLink.href = url.toString();
+        preparedMessageLink.hidden = false;
+      }
+      window.open(url.toString(), '_blank', 'noopener,noreferrer');
+      if (feedback) {
+        feedback.textContent = 'Listo: revisá el mensaje en WhatsApp y elegí enviarlo.';
+      }
+    });
+  }
+
+  const revealItems = document.querySelectorAll('.reveal');
+  if ('IntersectionObserver' in window && !window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    const revealObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('is-visible');
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12, rootMargin: '0px 0px -35px 0px' });
+    revealItems.forEach((item) => revealObserver.observe(item));
+
+    const processTrack = document.querySelector('.process-track');
+    if (processTrack) {
+      const processObserver = new IntersectionObserver((entries) => {
+        if (entries.some((entry) => entry.isIntersecting)) {
+          processTrack.classList.add('is-visible');
+          processObserver.disconnect();
+        }
+      }, { threshold: 0.28 });
+      processObserver.observe(processTrack);
+    }
+  } else {
+    revealItems.forEach((item) => item.classList.add('is-visible'));
+    document.querySelector('.process-track')?.classList.add('is-visible');
+  }
+
+  const hero = document.getElementById('hero');
+  const heroMedia = document.querySelector('.hero-media');
+  let framePending = false;
+  const updateScrollScene = () => {
+    if (!hero || !heroMedia) return;
+    const range = Math.max(1, hero.offsetHeight * 0.9);
+    const progress = Math.min(1, Math.max(0, -hero.getBoundingClientRect().top / range));
+    hero.style.setProperty('--scroll-progress', progress.toFixed(3));
+    const currentPath = hero.querySelector('.current-path');
+    if (currentPath) currentPath.style.strokeDashoffset = String(680 * (1 - progress));
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      const y = Math.round(progress * 25);
+      const scale = 1.075 + progress * 0.025;
+      heroMedia.style.transform = 'translate3d(0,' + y + 'px,0) scale(' + scale.toFixed(3) + ')';
+    }
+    framePending = false;
+  };
+  const onScroll = () => {
+    if (framePending) return;
+    framePending = true;
+    window.requestAnimationFrame(updateScrollScene);
+  };
+  window.addEventListener('scroll', onScroll, { passive: true });
+  window.addEventListener('resize', onScroll, { passive: true });
+  updateScrollScene();
 })();

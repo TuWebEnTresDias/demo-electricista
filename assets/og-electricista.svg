@@ -1,1 +1,13 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630"><rect width="1200" height="630" fill="#10171b"/><path d="M0 500 420 0h190L190 630H0z" fill="#172128"/><circle cx="1000" cy="110" r="220" fill="#c7f36b" opacity=".13"/><text x="80" y="190" fill="#c7f36b" font-family="Arial,sans-serif" font-size="28" letter-spacing="5">ELECTRICISTA / PREMIUM</text><text x="80" y="315" fill="#f4f7f0" font-family="Arial,sans-serif" font-size="72" font-weight="700">Diagnóstico claro,</text><text x="80" y="400" fill="#c7f36b" font-family="Arial,sans-serif" font-size="72" font-weight="700">trabajo comprobable.</text><path d="M84 470h420" stroke="#f4ad51" stroke-width="8"/><text x="80" y="530" fill="#aabbb7" font-family="Arial,sans-serif" font-size="24">Demo comercial · método, alcance y evidencia</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#0b1014"/><stop offset="1" stop-color="#18252b"/></linearGradient><radialGradient id="glow"><stop stop-color="#d88051" stop-opacity=".42"/><stop offset="1" stop-color="#d88051" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <circle cx="1020" cy="175" r="360" fill="url(#glow)"/>
+  <path d="M0 520h550" stroke="#62c8e9" stroke-opacity=".55"/>
+  <path d="M0 539h300" stroke="#d88051" stroke-width="4"/>
+  <text x="76" y="146" fill="#f2ad7c" font-family="Arial,sans-serif" font-size="22" letter-spacing="5">SERVICIO ELÉCTRICO · DEMO</text>
+  <text x="76" y="283" fill="#f7f6f2" font-family="Arial,sans-serif" font-size="76" font-weight="600" letter-spacing="-4">Cuando todo</text>
+  <text x="76" y="376" fill="#f2ad7c" font-family="Georgia,serif" font-size="84" font-style="italic" letter-spacing="-4">conecta, se nota.</text>
+  <text x="78" y="454" fill="#a6b2b6" font-family="Arial,sans-serif" font-size="24">Instalaciones · diagnóstico · mejoras</text>
+  <rect x="948" y="405" width="168" height="94" rx="3" fill="#10171c" stroke="#f2ad7c" stroke-opacity=".5"/>
+  <path d="m1033 420-29 40h20l-4 26 31-41h-20z" fill="#62c8e9"/>
+</svg>
