@@ -524,3 +524,17 @@ body{background:var(--paper);color:var(--ink)}
 /* Final contrast and form-control polish for the light palette. */
 .section-intro{color:var(--muted)}
 .field select{background-repeat:no-repeat;background-position:right 13px center;background-size:12px}
+
+/* Full-bleed backgrounds for process and contact. */
+.method,.contact{position:relative;isolation:isolate;background:transparent}
+.method::before,.contact::before{position:absolute;z-index:-1;top:0;bottom:0;left:50%;width:100vw;content:"";transform:translateX(-50%)}
+.method::before{
+  background:
+    radial-gradient(ellipse 75% 95% at 50% 14%,rgba(220,244,107,.11) 0%,rgba(228,231,218,.82) 46%,rgba(243,241,232,.98) 100%),
+    linear-gradient(180deg,#e4e7da 0%,#f3f1e8 100%);
+}
+.contact::before{
+  background:
+    radial-gradient(ellipse 85% 90% at 50% 0%,rgba(220,244,107,.075),transparent 69%),
+    linear-gradient(180deg,#17483b 0%,#17483b 58%,#102b25 100%);
+}
