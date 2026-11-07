@@ -538,3 +538,7 @@ body{background:var(--paper);color:var(--ink)}
     radial-gradient(ellipse 85% 90% at 50% 0%,rgba(220,244,107,.075),transparent 69%),
     linear-gradient(180deg,#17483b 0%,#17483b 58%,#102b25 100%);
 }
+
+
+/* Keep full-bleed section backgrounds inside the viewport when scrollbars are present. */
+html{overflow-x:clip}
