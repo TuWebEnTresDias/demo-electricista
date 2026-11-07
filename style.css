@@ -520,3 +520,7 @@ body{background:var(--paper);color:var(--ink)}
   .contact-form-card .form-card-top{border-bottom-color:rgba(255,255,255,.18);color:#e4e7da}
   .mobile-whatsapp-note{color:#d0ddd4}
 }
+
+/* Final contrast and form-control polish for the light palette. */
+.section-intro{color:var(--muted)}
+.field select{background-repeat:no-repeat;background-position:right 13px center;background-size:12px}
