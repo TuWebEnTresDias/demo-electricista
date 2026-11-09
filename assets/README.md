@@ -1,9 +1,8 @@
 # Assets visuales
 
-- `hero-electricista.gif`: fotografía generada para esta demo y animada con un movimiento de cámara leve; fallback.
-- `hero-electricista-motion.webp`: versión animada en WebP para carga más eficiente.
-- `hero-electricista.webp`: fotograma estático para movimiento reducido.
-- `medicion-electrica.webp`: fotografía ilustrativa generada para esta demo; reemplazar por material real antes de atribuirla a un negocio.
+- `hero-electricista.webp`: imagen principal generada para esta demo y primera escena del fondo.
+- `medicion-electrica.webp`: segunda fotografía ilustrativa generada para la transición del fondo. Reemplazar por material real antes de atribuirla a un negocio.
+- `hero-electricista.gif` y `hero-electricista-motion.webp`: versiones anteriores de una sola fotografía con movimiento de cámara; la página ya no las carga y se conservan como recursos heredados.
 - `mark.svg` y `og-electricista.svg`: recursos vectoriales propios del modelo visual.
 
 No se cargan imágenes ni fuentes desde terceros.
