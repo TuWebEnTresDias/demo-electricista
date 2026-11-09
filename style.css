@@ -64,10 +64,10 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .hero-shade{z-index:1;background:linear-gradient(90deg,rgba(16,43,37,.96) 0%,rgba(16,43,37,.84) 33%,rgba(16,43,37,.47) 56%,rgba(16,43,37,.08) 100%),linear-gradient(0deg,rgba(16,43,37,.73) 0%,transparent 34%,rgba(16,43,37,.10) 100%)}
 .hero-grain{z-index:2;opacity:.12;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.28'/%3E%3C/svg%3E")}
 .hero-shell{position:relative;z-index:3;min-height:inherit;display:flex;align-items:center;padding-top:58px;padding-bottom:122px}
-.hero-copy{width:min(840px,72%);padding-top:10px}
+.hero-copy{width:min(900px,78%);padding-top:10px}
 .eyebrow{display:flex;align-items:center;gap:12px;margin:0 0 22px;color:var(--copper-light);font-size:.66rem;font-weight:650;letter-spacing:.21em;line-height:1.4;text-transform:uppercase}
 .eyebrow-line{width:30px;height:1px;background:var(--copper-light)}
-.hero h1{max-width:860px;margin:0;font-size:clamp(3.55rem,6.8vw,6.8rem);font-weight:560;letter-spacing:-.075em;line-height:.93}
+.hero h1{max-width:900px;margin:0;font-size:clamp(3.65rem,7.9vw,7.3rem);font-weight:560;letter-spacing:-.075em;line-height:.93}
 .hero h1 em,.manifesto h2 em,.services h2 em,.method h2 em,.contact h2 em,.faq h2 em{color:var(--copper-light);font-family:Georgia,"Times New Roman",serif;font-weight:400;letter-spacing:-.07em}
 .hero-lead{max-width:600px;margin:27px 0 0;color:#c1c8c8;font-size:clamp(1rem,1.35vw,1.17rem);line-height:1.75}
 .hero-actions{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:34px}
@@ -281,7 +281,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
   .js .reveal{opacity:1;transform:none}
 }
 @media(max-width:1040px){
-  .hero-copy{width:min(760px,72%)}
+  .hero-copy{width:min(820px,78%)}
   .hero-console{right:var(--pad);width:225px}
   .manifesto-layout{gap:6%}
   .method-heading{grid-template-columns:minmax(0,1fr) auto;column-gap:30px;row-gap:22px}
