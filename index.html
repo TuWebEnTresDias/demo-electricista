@@ -18,7 +18,7 @@
   <meta property="og:image" content="https://tuwebentresdias.github.io/demo-electricista-premium/assets/og-electricista.svg?v=20261107c">
   <meta name="twitter:card" content="summary_large_image">
   <link rel="icon" href="./assets/mark.svg?v=20261107c" type="image/svg+xml">
-  <link rel="preload" as="image" href="./assets/hero-electricista-motion.webp" type="image/webp">
+  <link rel="preload" as="image" href="./assets/hero-electricista.webp" type="image/webp">
   <link rel="stylesheet" href="./style.css?v=20261107h">
   <script src="./site-security.js"></script>
   <script src="./script.js?v=20261107b" defer data-site-script></script>
@@ -61,11 +61,10 @@
   <main id="contenido">
     <section class="hero" id="hero" aria-labelledby="hero-title">
       <div class="hero-media" aria-hidden="true">
-        <picture>
-          <source srcset="./assets/hero-electricista.webp" media="(prefers-reduced-motion: reduce)">
-          <source srcset="./assets/hero-electricista-motion.webp" type="image/webp">
-          <img src="./assets/hero-electricista.gif" alt="" width="700" height="467" fetchpriority="high">
-        </picture>
+        <div class="hero-slides">
+          <img class="hero-slide hero-slide-primary" src="./assets/hero-electricista.webp" alt="" width="700" height="467" fetchpriority="high" decoding="async">
+          <img class="hero-slide hero-slide-secondary" src="./assets/medicion-electrica.webp" alt="" width="1200" height="800" loading="lazy" decoding="async">
+        </div>
         <div class="hero-shade"></div>
         <div class="hero-grain"></div>
       </div>
@@ -179,7 +178,7 @@
         <div class="section-index reveal"><span>03</span><i></i><span>EL PROCESO</span></div>
         <div class="reveal">
           <p class="eyebrow">MENOS INCERTIDUMBRE. MÁS CLARIDAD.</p>
-          <h2 id="method-title">De la primera duda<br><em>a un próximo paso.</em></h2>
+          <h2 id="method-title">De la primera duda <em>a un próximo paso.</em></h2>
           <p class="method-copy">Una conversación ordenada ayuda a tomar mejores decisiones, incluso antes de definir un trabajo.</p>
         </div>
         <a class="button button-outline reveal" href="#contacto">Empezar una consulta <span class="arrow-icon" aria-hidden="true"></span></a>
