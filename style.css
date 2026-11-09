@@ -103,7 +103,7 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible,te
 .current-node{fill:var(--copper-light);filter:drop-shadow(0 0 8px var(--copper-light));opacity:.7}
 .node-one{animation:node-pulse 2.8s ease-in-out infinite}
 .node-two{animation:node-pulse 3.3s 1s ease-in-out infinite}
- .node-three{animation:node-pulse 2.9s .6s ease-in-out infinite}
+.node-three{animation:node-pulse 2.9s .6s ease-in-out infinite}
 @keyframes hero-crossfade{0%,42%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
 @keyframes console-scan{0%,100%{transform:translateX(-10%)}50%{transform:translateX(220%)}}
 @keyframes cue-flow{0%{transform:translateX(-100%)}65%,100%{transform:translateX(100%)}}
